@@ -19,4 +19,9 @@ func main() {
 	}
 	taskId := os.Args[1]
 	fmt.Printf("Task ID: %s\n", taskId)
+
+	// create a new api object
+	api := NewApi(apiKey)
+	task := api.GetTask(taskId)
+	fmt.Printf("Task: %v\n", task.Name)
 }
